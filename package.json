@@ -1,0 +1,47 @@
+{
+  "name": "southbrook-tech",
+  "description": "Website for Southbrook Tech",
+  "main": "index.js",
+  "author": "Daniel Bisgrove <daniel@bizz-websites.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "next dev",
+    "build": "next build",
+    "serve": "next start",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "lint-staged": "eslint '*/**/*.{js,ts,tsx}' --cache --fix",
+    "lint:ci": "eslint '*/**/*.{js,ts,tsx}'",
+    "lint:ts": "tsc",
+    "prettier:check": "prettier . --list-different",
+    "prettier:write": "prettier . --write",
+    "postinstall": "husky install"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.8",
+    "@mui/material": "^6.4.8",
+    "next": "15.2.3",
+    "next-optimized-images": "^2.6.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.23.0",
+    "@next/bundle-analyzer": "^15.2.3",
+    "@next/eslint-plugin-next": "^15.2.3",
+    "@types/node": "^22.13.11",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19",
+    "eslint": "^9.23.0",
+    "eslint-config-next": "15.2.3",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.27.0"
+  },
+  "packageManager": "yarn@4.7.0"
+}
