@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { Box, StyledEngineProvider } from '@mui/material'
 import createEmotionCache from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
 import { ThemeProvider } from '@mui/material/styles'
@@ -53,11 +54,19 @@ export default function App({ Component, pageProps, router }: AppProps) {
         />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       </Head>
-      <CacheProvider value={emotionCache}>
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} key={router.route} />
-        </ThemeProvider>
-      </CacheProvider>
+      <StyledEngineProvider injectFirst>
+        <CacheProvider value={emotionCache}>
+          <ThemeProvider theme={theme}>
+            <Box
+              sx={{
+                fontFamily: theme.typography.fontFamily
+              }}
+            >
+              <Component {...pageProps} key={router.route} />
+            </Box>
+          </ThemeProvider>
+        </CacheProvider>
+      </StyledEngineProvider>
     </>
   )
 }
